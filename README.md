@@ -1,24 +1,15 @@
 ## LottieAnimation
-[My widget description]
+A simple react widget for Mendix to display Lottie animations.
 
 ## Features
-[feature highlights]
+- Load a Lottie animation from a JSON string or a URL
+- Set the width and height of the animation
+- Trigger an action when the animation is complete
 
 ## Usage
-[step by step instructions]
+Add the widget to your page and insert a JSON (string) or a url to a JSON file which contains the Lottie file.
 
-## Demo project
-[link to sandbox]
+You can also set the width and height of the animation, default is 100% of the parent container.
 
 ## Issues, suggestions and feature requests
-[link to GitHub issues]
-
-## Development and contribution
-
-1. Install NPM package dependencies by using: `npm install`. If you use NPM v7.x.x, which can be checked by executing `npm -v`, execute: `npm install --legacy-peer-deps`.
-1. Run `npm start` to watch for code changes. On every change:
-    - the widget will be bundled;
-    - the bundle will be included in a `dist` folder in the root directory of the project;
-    - the bundle will be included in the `deployment` and `widgets` folder of the Mendix test project.
-
-[specify contribution]
+https://github.com/hunter-koppen/lottieAnimation/issues
