@@ -4,13 +4,14 @@ import Lottie from "react-lottie-player/dist/LottiePlayerLight";
 import { useFetchRemoteJson } from "../util/useFetchRemoteJson";
 import { transformJson } from "../util/transformJson";
 
-export function LottieInit({ jsonUrl, jsonString, loop, width, height, onMicroflowComplete, triggerPlay }) {
+export function LottieInit({ jsonUrl, jsonString, loop, width, height, onCompleteAction, triggerPlay }) {
     const { response } = useFetchRemoteJson(jsonUrl);
     const [animationData, setAnimationData] = useState(null);
+    const [dimensions, setDimensions] = useState({ width: undefined, height: undefined });
 
-    useEffect(() => {
-        console.log('triggerPlay value:', triggerPlay);
-    }, [triggerPlay]);
+    const handleAnimationComplete = () => {
+        onCompleteAction?.execute();
+    };
 
     useEffect(() => {
         if (jsonString) {
@@ -25,14 +26,24 @@ export function LottieInit({ jsonUrl, jsonString, loop, width, height, onMicrofl
         }
     }, [response, jsonUrl]);
 
+    useEffect(() => {
+        if (width?.value !== undefined && height?.value !== undefined) {
+            setDimensions({
+                width: width.value,
+                height: height.value
+            });
+        }
+    }, [width, height]);
+
     return (
         <Fragment>
             <Lottie
                 play={triggerPlay ?? true}
                 loop={loop}
                 animationData={animationData}
-                style={{ width, height }}
-                onComplete={() => onMicroflowComplete?.execute()}
+                style={dimensions}
+                onComplete={!loop ? handleAnimationComplete : undefined}
+                onLoopComplete={loop ? handleAnimationComplete : undefined}
                 rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}
             />
         </Fragment>

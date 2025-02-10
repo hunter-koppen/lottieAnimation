@@ -25,22 +25,24 @@
                     <caption>Loop Animation</caption>
                     <description></description>
                 </property>
-                <property key="width" type="integer" required="true" defaultValue='400'>
+                <property key="width" type="expression" defaultValue="'100%'" required="true">
                     <caption>Width</caption>
-                    <description></description>
+                    <description/>
+                    <returnType type="String" />
                 </property>
-                <property key="height" type="integer" required="true" defaultValue='400'>
+                <property key="height" type="expression" defaultValue="'100%'" required="true">
                     <caption>Height</caption>
-                    <description></description>
+                    <description/>
+                    <returnType type="String" />
                 </property>
                 <property key="triggerPlay" type="attribute" required="false">
-                    <caption>Start the Animation</caption>
+                    <caption>Play the Animation</caption>
                     <description>If this value is changed from false to true the animation will start playing</description>
                     <attributeTypes>
                         <attributeType name="Boolean"/>
                     </attributeTypes>
                 </property>
-                <property key="onMicroflowComplete" type="action">
+                <property key="onCompleteAction" type="action">
                     <caption>On Complete</caption>
                     <description>Trigger action when animation is done (can't be used with loop)</description>
                 </property>
