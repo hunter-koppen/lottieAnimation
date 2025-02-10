@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="kobeon.lottieanimation.LottieAnimation" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Lottie Animation</name>
+    <description>My widget description</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="Data">
+                <property key="jsonString" type="attribute" required="false">
+                    <caption>Attribute (path)</caption>
+                    <description/>
+                    <attributeTypes>
+                        <attributeType name="String"/>
+                    </attributeTypes>
+                </property>
+                <property key="jsonUrl" type="string" multiline="false" required="false">
+                    <caption>JSON Link</caption>
+                    <description>URL to JSON File</description>
+                </property>
+            </propertyGroup>
+            <propertyGroup caption="Control">
+                <property key="loop" type="boolean" defaultValue="true">
+                    <caption>Loop Animation</caption>
+                    <description></description>
+                </property>
+                <property key="width" type="integer" required="true" defaultValue='400'>
+                    <caption>Width</caption>
+                    <description></description>
+                </property>
+                <property key="height" type="integer" required="true" defaultValue='400'>
+                    <caption>Height</caption>
+                    <description></description>
+                </property>
+                <property key="triggerPlay" type="attribute" required="false">
+                    <caption>Start the Animation</caption>
+                    <description>If this value is changed from false to true the animation will start playing</description>
+                    <attributeTypes>
+                        <attributeType name="Boolean"/>
+                    </attributeTypes>
+                </property>
+                <property key="onMicroflowComplete" type="action">
+                    <caption>On Complete</caption>
+                    <description>Trigger action when animation is done (can't be used with loop)</description>
+                </property>
+            </propertyGroup>
+        </propertyGroup>
+    </properties>
+</widget>
