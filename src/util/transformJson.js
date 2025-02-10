@@ -4,6 +4,9 @@ export const transformJson = string => {
             return JSON.parse(string);
         } catch (error) {
             console.error(`Invalid JSON, ${error.message}`);
+            return null;
         }
+    } else {
+        return null;
     }
 };
