@@ -4,7 +4,7 @@ import Lottie from "react-lottie-player/dist/LottiePlayerLight";
 import { useFetchRemoteJson } from "../util/useFetchRemoteJson";
 import { transformJson } from "../util/transformJson";
 
-export function LottieInit({ jsonUrl, jsonString, loop, width, height, onCompleteAction, triggerPlay }) {
+export function LottieInit({ jsonUrl, jsonString, loop, width, height, onCompleteAction, triggerPlay, classNames }) {
     const { response } = useFetchRemoteJson(jsonUrl);
     const [animationData, setAnimationData] = useState(null);
     const [dimensions, setDimensions] = useState({ width: undefined, height: undefined });
@@ -42,6 +42,7 @@ export function LottieInit({ jsonUrl, jsonString, loop, width, height, onComplet
                 loop={loop}
                 animationData={animationData}
                 style={dimensions}
+                className={"lottie-animation " + classNames}
                 onComplete={!loop ? handleAnimationComplete : undefined}
                 onLoopComplete={loop ? handleAnimationComplete : undefined}
                 rendererSettings={{ preserveAspectRatio: "xMidYMid slice" }}

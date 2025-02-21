@@ -2,16 +2,17 @@ import { createElement } from "react";
 
 import { LottieInit } from "./components/LottieInit";
 
-export function LottieAnimation({ jsonUrl, jsonString, loop, width, height, onCompleteAction, triggerPlay }) {
+export function LottieAnimation(props) {
     return (
         <LottieInit
-            loop={loop}
-            width={width}
-            height={height}
-            jsonUrl={jsonUrl}
-            jsonString={jsonString}
-            triggerPlay={triggerPlay?.value}
-            onCompleteAction={onCompleteAction}
+            loop={props.loop}
+            width={props.width}
+            height={props.height}
+            jsonUrl={props.jsonUrl}
+            jsonString={props.jsonString}
+            triggerPlay={props.triggerPlay?.value}
+            onCompleteAction={props.onCompleteAction}
+            classNames={props.class}
         />
     );
 }

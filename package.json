@@ -1,9 +1,9 @@
 {
   "name": "lottieanimation",
   "widgetName": "LottieAnimation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My widget description",
-  "copyright": "Kobeon B.V. 2024",
+  "copyright": "Kobeon B.V. 2025",
   "author": "Hunter Koppen",
   "engines": {
     "node": ">=16"
